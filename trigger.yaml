@@ -7,8 +7,8 @@ jobs:
       vmimage: 'ubuntu-16.04'
     steps:
       - checkout: self
-      - task: UserPythonVersion@0
-        dispalyName: "set python version"
+      - task: UsePythonVersion@0
+       #dispalyName: setpythonversion
         inputs:
           versionSpec: '3.7'
           architecture: 'x64'
