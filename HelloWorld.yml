@@ -1,0 +1,16 @@
+policies:
+
+    - name: Tag-VM-Hello-World
+      description:
+        Add a tag to a vm
+      resource: azure.vm
+      filters:
+        - type: value
+          key: name
+          value: my_vm_name
+     actions:
+      - type: tag
+        tag: Hello
+        value: world
+         
+        
