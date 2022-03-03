@@ -16,5 +16,6 @@ jobs:
         displayName: Upgrade pip
       - script: pip install c7n_azure
         displayName: Install custodian
-      - script: custodian validate policies/REPOTEST/
+      - script: custodian validate policies/REPOTEST/HelloWorld.yml
+        displayName: validate policy file
         
