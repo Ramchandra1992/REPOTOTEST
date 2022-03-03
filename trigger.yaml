@@ -1,0 +1,20 @@
+trigger:
+- master
+
+jobs:
+  - job: 'validate'
+    pool:
+      vmimage: 'ubuntu-16.04'
+    steps:
+      - checkout: self
+      - task: UserPythonVersion@0
+        dispalyName: "set python version"
+        inputs:
+          versionSpec: '3.7'
+          architecture: 'x64'
+      - script: pip install --upgrade pip
+        displayName: Upgrade pip
+      - script: pip install c7n_azure
+        displayName: Install custodian
+      - script: custodian validate policies/REPOTEST/
+        
